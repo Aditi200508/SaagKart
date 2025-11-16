@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>SaagKart — Taste of Jharkhandi Saag </title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <img src="images/logo.png" alt="SaagKart" class="logo">
+      <div class="brand-text">
+        <h1>SaagKart</h1>
+        <small>Taste of Jharkhand</small>
+      </div>
+    </div>
+    <input type="text" class="nav-search" placeholder="Search for products...🔍">
+    <nav class="nav">
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="/SaagKart/backend/admin_orders.php" target="_blank">Admin</a>
+    </nav>
+    <span id="openCart" class="cart-icon" style="cursor:pointer;">
+    🛒<span id="cartCount" class="cart-badge">0</span>
+  </div>
+</header>
+<!-- Slider -->
+<section class="slider">
+  <div class="slider-wrapper">
+    <button class="arrow left">&#10094;</button>
+
+    <div class="slides">
+    <img src="images/slider1.png" alt="slide1">
+    <img src="images/slider2.png" alt="slide2">
+    <img src="images/slider3.png" alt="slide3">
+    <img src="images/slider4.png" alt="slide4">
+  </div>
+  <button class="arrow right">&#10095;</button>
+  </div>
+</section>
+
+<!-- Products -->
+<section id="products" class="products-section">
+  <div class="container">
+    <h3>Our Saag Varieties</h3>
+    <div id="productsGrid" class="products-grid"></div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="about">
+  <div class="container">
+    <h3>About SaagKart</h3>
+    <p>We deliver locally sourced,fresh and sun-dried saag in eco-friendly packaging. Supporting Jharkhand farmers.</p>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact">
+  <div class="container">
+    <h3>Contact Us</h3>
+    <form id="contactForm">
+      <input name="name" id="contact_name" placeholder="Your name" required>
+      <input name="email" id="contact_email" type="email" placeholder="Email" required>
+      <textarea name="message" id="contact_message" rows="4" placeholder="Message"></textarea>
+      <button type="submit" class="btn primary">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- Cart -->
+<aside id="cartDrawer" class="drawer" aria-hidden="true">
+  <h3>Your cart</h3>
+  <div id="cartItems"></div>
+  <div class="cart-footer">
+    <div>Total: ₹<span id="cartTotal">0.00</span></div>
+    <button id="proceedCheckout" class="btn primary">Checkout</button>
+  </div>
+  <button id="closeCart" class="btn outline">Close</button>
+</aside>
+
+<!-- Checkout modal -->
+<div id="checkoutModal" class="modal" aria-hidden="true">
+  <div class="modal-box">
+    <h3>Checkout</h3>
+    <form id="checkoutForm">
+      <input id="customer_name" name="customer_name" placeholder="Full name" required>
+      <input id="customer_email" name="customer_email" type="email" placeholder="Email" required>
+      <input id="customer_phone" name="customer_phone" placeholder="Phone">
+      <textarea id="customer_address" name="customer_address" placeholder="Shipping address" rows="3" required></textarea>
+
+      <div id="orderPreview" class="order-preview"></div>
+
+      <button type="submit" class="btn primary">Place Order</button>
+      <button type="button" id="cancelCheckout" class="btn outline">Cancel</button>
+    </form>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">© SaagKart 2025 — Taste of Jharkhand</div>
+  <div>
+    <a href="#">Instagram</a> | <a href="#">WhatsApp</a> | <a href="#">YouTube</a>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
