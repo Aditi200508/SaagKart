@@ -1,12 +1,36 @@
 :root{--accent:#2a9d8f;--muted:#6b7280}
 *{box-sizing:border-box}
-body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f7faf7;color:#122}
+body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f7faf7;color:#ff7f50;}
 .container{max-width:1100px;margin:0 auto;padding:18px}
-.header-inner{display:flex;justify-content:space-between;align-items:center}
 .brand{display:flex;align-items:center;gap:12px}
 .logo{width:64px;height:64px;object-fit:contain}
 .brand-text h1{margin:0;font-size:20px}
-.nav a{margin-left:12px;color:#0b3b2f;text-decoration:none;font-weight:600}
+.header-inner{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #006400;
+  padding: 12px 20px;
+  border-radius: 10px;
+}
+.nav{
+  display: flex;
+  gap:18px;
+}
+.nav a{
+  color:#fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+.menu-toggle{
+  display: none;
+  font-size: 26px;
+  background: none;
+  border:0;
+  color:#fff;
+  cursor:pointer;
+}
+
 .nav-search{
   padding:8px 16px;
   border:1px solid #add;
@@ -165,7 +189,20 @@ input,textarea{
 .footer a{
   color:#ffab00; text-decoration: none; margin:0 8px;
 }
-@media(max-width:600px){
+@media(max-width:720px){
+  .menu-toggle{display:block;}
+  .nav{
+    display: none;
+    position: absolute;
+    top: 65px;
+    right:10px;
+    background:#0056b3;
+    padding:12px;
+    border-radius: 10px;
+    flex-direction:column;
+    gap:10px
+  }
+  .nav.show{display: flex;}
   .slides img{height: 360px;}
   .products-grid{grid-template-columns: 1fr 1fr;}
   .product img{max-height: 160px;}
